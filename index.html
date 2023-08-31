@@ -26,7 +26,7 @@ ctx.fillText("test", 100,20)
             ctx.arc(s[i].x, s[i].y, s[i].3, 0, 6.3)
             ctx.fill()
             ctx.fillStyle='black'
-            s[i].x=(s[i].x+1) %400
+            if(s[i].x>410)={s[i].x=0}
             ctx.arc(s[i].x, s[i].y, s[i].r, 0, 6.3)
             ctx.fill()
         }
