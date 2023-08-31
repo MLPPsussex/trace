@@ -8,7 +8,7 @@
 
         var canvas = document.getElementById('canvas');
         var ctx = canvas.getContext('2d');
-ctx.filltext("test", 200,20)
+ctx.filltext("test", 100,20)
   var s=[],i
  for(i=0;i<200;i++){
         s[i]={x: math.random()*400,
@@ -19,7 +19,8 @@ ctx.filltext("test", 200,20)
 
    function draw() {
           for(i=0;i<200;i++){
-            ctx.arc(s[i].x,s[i].y,s[i].r,0,6.3)
+            ctx.beginPath()
+            ctx.arc(s[i].x, s[i].y, s[i].r, 0, 6.3)
             ctx.stroke()
         }
     }
