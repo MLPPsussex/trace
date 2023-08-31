@@ -22,6 +22,10 @@ ctx.fillText("test", 100,20)
    function draw() {
           for(i=0;i<200;i++){
             ctx.beginPath()
+            ctx.fillStyle='white'
+            ctx.arc(s[i].x, s[i].y, s[i].3, 0, 6.3)
+            ctx.fill()
+            ctx.fillStyle='black'
             s[i].x=(s[i].x+1) %400
             ctx.arc(s[i].x, s[i].y, s[i].r, 0, 6.3)
             ctx.fill()
