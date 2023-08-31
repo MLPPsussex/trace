@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>  
   <body>
-    <canvas id="canvas" width="400" height="400"></canvas>
+    <canvas id="canvas" width="600" height="400"></canvas>
 
     <script>
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
   var s=[],i
  for(i=0;i<200;i++){
-        s[i]={x: Math.random()*400,
+        s[i]={x: Math.random()*600,
               y: Math.random()*400,
               r: Math.random()*3}
  }
@@ -25,7 +25,7 @@ setInterval(draw,30)
             ctx.fillStyle='black'
 
             s[i].x+=1
-            if(s[i].x>410){s[i].x=-10}
+            if(s[i].x>610){s[i].x=-5}
             ctx.arc(s[i].x, s[i].y, s[i].r, 0, 6.3)
             ctx.fill()
         }
