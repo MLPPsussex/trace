@@ -13,16 +13,18 @@ ctx.fillText("test", 100,20)
  for(i=0;i<200;i++){
         s[i]={x: Math.random()*400,
               y: Math.random()*400,
-              r: 2}
+              
+              r: Maths.random()*3}
  }
       
-  draw()
+  setInterval(draw,30)
 
    function draw() {
           for(i=0;i<200;i++){
             ctx.beginPath()
+            s[i].x=(s[i].x+1) %400
             ctx.arc(s[i].x, s[i].y, s[i].r, 0, 6.3)
-            ctx.stroke()
+            ctx.fill()
         }
     }
         
