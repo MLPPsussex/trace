@@ -14,7 +14,7 @@ ctx.fillText("test", 100,20)
         s[i]={x: Math.random()*400,
               y: Math.random()*400,
               
-              r: Maths.random()*3}
+              r: Math.random()*3}
  }
       
   setInterval(draw,30)
@@ -23,10 +23,10 @@ ctx.fillText("test", 100,20)
           for(i=0;i<200;i++){
             ctx.beginPath()
             ctx.fillStyle='white'
-            ctx.arc(s[i].x, s[i].y, s[i].3, 0, 6.3)
+            ctx.arc(s[i].x, s[i].y, 3, 0, 6.3)
             ctx.fill()
             ctx.fillStyle='black'
-            if(s[i].x>410)={s[i].x=0}
+            if(s[i].x>410){s[i].x=0}
             ctx.arc(s[i].x, s[i].y, s[i].r, 0, 6.3)
             ctx.fill()
         }
