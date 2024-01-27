@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Local Storage Example</title>
-</head>
 <body>
-
-  <h1>Local Storage Example</h1>
 
   <label for="dataInput">Enter data:</label>
   <input type="text" id="dataInput">
@@ -17,12 +12,10 @@
   </div>
 
   <script>
-    // Function to save data to Local Storage
+   
     function saveData() {
-      // Get the input value
       var inputData = document.getElementById("dataInput").value;
 
-      // Check if Local Storage is supported by the browser
       if (typeof(Storage) !== "undefined") {
         // Save data to Local Storage
         localStorage.setItem("userInput", inputData);
@@ -34,9 +27,7 @@
       }
     }
 
-    // Function to display saved data
     function displaySavedData() {
-      // Retrieve data from Local Storage
       var savedData = localStorage.getItem("userInput");
 
       // Display the saved data
