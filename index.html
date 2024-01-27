@@ -1,36 +1,55 @@
 <!DOCTYPE html>
-<html>  
-  <body>
-    <canvas id="canvas" width="600" height="400"></canvas>
+<html>
+<head>
+  <title>Local Storage Example</title>
+</head>
+<body>
 
-    <script>
-  var canvas = document.getElementById('canvas');
-  var ctx = canvas.getContext('2d');
-  var s=[],i
- for(i=0;i<200;i++){
-        s[i]={x: Math.random()*600,
-              y: Math.random()*400,
-              r: Math.random()*3}
- }
-      
-setInterval(draw,30)
+  <h1>Local Storage Example</h1>
 
- function draw() {
-          for(i=0;i<200;i++){
-            ctx.beginPath()
-            ctx.fillStyle='white'
-            ctx.arc(s[i].x, s[i].y, 5, 0, 6.3)
-            ctx.fill()
-            ctx.beginPath()
-            ctx.fillStyle='black'
+  <label for="dataInput">Enter data:</label>
+  <input type="text" id="dataInput">
+  <button onclick="saveData()">Save</button>
 
-            s[i].x+=1
-            if(s[i].x>610){s[i].x=-5}
-            ctx.arc(s[i].x, s[i].y, s[i].r, 0, 6.3)
-            ctx.fill()
-        }
+  <div>
+    <h2>Saved Data:</h2>
+    <p id="savedData"></p>
+  </div>
+
+  <script>
+    // Function to save data to Local Storage
+    function saveData() {
+      // Get the input value
+      var inputData = document.getElementById("dataInput").value;
+
+      // Check if Local Storage is supported by the browser
+      if (typeof(Storage) !== "undefined") {
+        // Save data to Local Storage
+        localStorage.setItem("userInput", inputData);
+
+        // Display saved data
+        displaySavedData();
+      } else {
+        alert("Sorry, your browser does not support Local Storage.");
+      }
     }
-        
-    </script>
-  </body>
+
+    // Function to display saved data
+    function displaySavedData() {
+      // Retrieve data from Local Storage
+      var savedData = localStorage.getItem("userInput");
+
+      // Display the saved data
+      if (savedData) {
+        document.getElementById("savedData").textContent = "Saved Data: " + savedData;
+      } else {
+        document.getElementById("savedData").textContent = "No data saved.";
+      }
+    }
+
+    // Display any existing saved data when the page loads
+    displaySavedData();
+  </script>
+
+</body>
 </html>
